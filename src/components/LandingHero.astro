@@ -1,0 +1,60 @@
+---
+import { Image } from 'astro:assets';
+import profileImage from '@/assets/images/profile-small.png';
+import Sparkles from '@/components/Sparkles';
+---
+
+<section
+  class="container relative flex flex-col-reverse items-center md:flex-row gap-12"
+>
+  <div class="flex-1 relative z-1 pt-40 sm:pt-44 md:pt-0">
+    <h1
+      class="font-bold mb-2 text-5xl md:text-[clamp(3rem,6vw,4rem)] leading-tight uppercase"
+    >
+      <Sparkles client:load><span> Hi,</span></Sparkles>
+      <br />
+      <Sparkles client:load><span> I'm Jesse.</span> </Sparkles>
+    </h1>
+
+    <h2 class="text-xl md:text-2xl text-primary whitespace-nowrap">
+      | Web Developer
+    </h2>
+    <p class="mt-4 max-w-[35ch] text-pretty text-muted">
+      I'm Jesse Ajioh, a Fullstack Web Developer with proficiency in modern
+      tools and frameworks, and a passion for building scalable web applications
+      that solve real-world problems.
+    </p>
+
+    <a
+      href="#"
+      class="h-16 flex w-max mt-8 border-2 border-primary hover:shadow-xl hover:shadow-primary/20 active:scale-95 transition group"
+    >
+      <span
+        class="bg-primary grid place-items-center text-background h-full px-6 transition"
+        >Got a project?</span
+      >
+      <span class="h-full grid place-items-center px-6 text-primary"
+        >Let's talk.</span
+      >
+    </a>
+  </div>
+  <div
+    class="flex-1 absolute top-0 max-w-[300px] md:max-w-[400px] md:relative isolate"
+  >
+    <div
+      class="absolute inset-0 border-4 border-primary top-24 left-12 -bottom-2 -right-4 z-0"
+    >
+    </div>
+    <Image
+      src={profileImage}
+      alt="Jesse - Fullstack Developer"
+      class="w-full relative z-[1] object-cover object-top rounded-lg"
+      priority
+      loading="eager"
+    />
+    <div
+      class="absolute -inset-4 bg-gradient-to-b via-background/90 md:via-background/80 from-transparent to-background z-[1]"
+    >
+    </div>
+  </div>
+</section>

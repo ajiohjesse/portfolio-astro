@@ -1,0 +1,54 @@
+---
+import Sparkles from './Sparkles';
+
+const workHistory = [
+  {
+    company: 'Mephalti Technologies Ltd.',
+    role: 'Frontend Developer',
+    period: 'April 2023 - December 2024',
+    responsibilities: [
+      'Developed landing pages for marketing campaings',
+      'Led the development of scalable web applications using React.',
+      'Integrated backend services and APIs',
+      'Assited in onboarding junior developers',
+    ],
+  },
+  {
+    company: 'FarstCart Technologies Ltd.',
+    role: 'Fullstack Developer',
+    period: 'March 2023 - January 2025',
+    responsibilities: [
+      'Developed fullstack web applications with Next.js',
+      'Setup CI/CD pipelines for automated deployments',
+      'Developed waitlist feature for product launch',
+    ],
+  },
+];
+---
+
+<section class="container">
+  <h2 class="text-3xl font-bold uppercase tracking-tight">
+    <span class="text-primary">3.</span> Work Histroy.
+  </h2>
+
+  <div class="grid gap-8 md:grid-cols-2 pt-12">
+    {
+      workHistory.map(job => (
+        <div data-id="border-card" class="bg-card shadow-md">
+          <div data-id="border-card-inner" class="bg-card rounded p-8">
+            <Sparkles client:load>
+              <h3 class="text-xl font-bold">{job.role}</h3>
+            </Sparkles>
+            <h4 class="text-lg text-primary my-2">{job.company}</h4>
+            <p class="text-muted mb-4 text-base">{job.period}</p>
+            <ul class="list-disc list-outside pl-4 text-muted">
+              {job.responsibilities.map(responsibility => (
+                <li class="mb-2">{responsibility}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

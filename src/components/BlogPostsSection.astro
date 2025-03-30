@@ -1,0 +1,53 @@
+---
+const blogPosts = [
+  {
+    title: 'Mastering Microservices Architecture',
+    date: 'March 15, 2024',
+    excerpt:
+      'Deep dive into designing scalable microservices using Node.js and Docker.',
+    link: '/blog/microservices-architecture',
+  },
+  {
+    title: 'React Performance Optimization Techniques',
+    date: 'February 22, 2024',
+    excerpt:
+      'Practical strategies to improve React application performance and user experience.',
+    link: '/blog/react-performance',
+  },
+  {
+    title: 'Building Serverless Applications with Hono',
+    date: 'January 10, 2024',
+    excerpt:
+      'Exploring serverless development using Hono and modern cloud platforms.',
+    link: '/blog/serverless-hono',
+  },
+];
+---
+
+<section class="container">
+  <h2 class="text-3xl font-bold uppercase tracking-tight">
+    <span class="text-primary">5.</span> LATEST POSTS
+  </h2>
+
+  <div class="pt-12 pb-8">
+    {
+      blogPosts.map(post => (
+        <a href={post.link} class="block">
+          <div class="bg-card p-6 rounded shadow-md mb-6 hover:shadow-xl transition group">
+            <h3 class="text-xl font-bold group-hover:text-primary transition">
+              {post.title}
+            </h3>
+            <p class="text-muted block text-sm mb-4 mt-2">{post.date}</p>
+            <p class="text-muted">{post.excerpt}</p>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+
+  <a
+    href="#"
+    class="py-4 px-8 max-w-[400px] mx-auto hover:shadow-xl hover:shadow-primary/20 active:scale-95 border border-primary flex justify-center"
+    >See all Posts</a
+  >
+</section>

@@ -1,0 +1,78 @@
+---
+import AstroIcon from '@/icons/AstroIcon.astro';
+import CssIcon from '@/icons/CssIcon.astro';
+import ExpressIcon from '@/icons/ExpressIcon.astro';
+import HonoIcon from '@/icons/HonoIcon.astro';
+import HtmlIcon from '@/icons/HtmlIcon.astro';
+import NextIcon from '@/icons/NextIcon.astro';
+import NodeIcon from '@/icons/NodeIcon.astro';
+import PostgresIcon from '@/icons/PostgresIcon.astro';
+import ReactIcon from '@/icons/ReactIcon.astro';
+import SqliteIcon from '@/icons/SqliteIcon.astro';
+import TailwindIcon from '@/icons/TailwindIcon.astro';
+import TypescriptIcon from '@/icons/TypescriptIcon.astro';
+import VercelLogo from '@/icons/VercelLogo.astro';
+import MongoIcon from '@/icons/MongoIcon.astro';
+import CloudflareIcon from '@/icons/CloudflareIcon.astro';
+import NetlifyIcon from '@/icons/NetlifyIcon.astro';
+import BunIcon from '@/icons/BunIcon.astro';
+import AwsIcon from '@/icons/AwsIcon.astro';
+import TursoIcon from '@/icons/TursoIcon.astro';
+import FirebaseIcon from '@/icons/FirebaseIcon.astro';
+
+const techStacks = {
+  frontend: [
+    { name: 'HTML5', logo: HtmlIcon },
+    { name: 'CSS3', logo: CssIcon },
+    { name: 'React', logo: ReactIcon },
+    { name: 'Next.js', logo: NextIcon },
+    { name: 'Astro', logo: AstroIcon },
+    { name: 'Tailwind', logo: TailwindIcon },
+  ],
+  backend: [
+    { name: 'TypeScript', logo: TypescriptIcon },
+    { name: 'Node.js', logo: NodeIcon },
+    { name: 'Bun', logo: BunIcon },
+    { name: 'Express', logo: ExpressIcon },
+    { name: 'Hono', logo: HonoIcon },
+  ],
+  database: [
+    { name: 'PostgreSQL', logo: PostgresIcon },
+    { name: 'MongoDB', logo: MongoIcon },
+    { name: 'Turso (SQLite)', logo: TursoIcon },
+    { name: 'Firebase', logo: FirebaseIcon },
+  ],
+  infrastructure: [
+    { name: 'Vercel', logo: VercelLogo },
+    { name: 'Netlify', logo: NetlifyIcon },
+    { name: 'Cloudflare', logo: CloudflareIcon },
+    { name: 'AWS', logo: AwsIcon },
+  ],
+};
+---
+
+<section class="container">
+  <h2 class="text-3xl font-bold uppercase tracking-tight">
+    <span class="text-primary">2.</span> MY TECH STACK.
+  </h2>
+
+  <div class="grid md:grid-cols-2 gap-8 pt-12">
+    {
+      Object.entries(techStacks).map(([category, technologies]) => (
+        <div class="bg-card p-6 shadow-md rounded">
+          <h3 class="text-xl font-bold mb-6 capitalize">{category}</h3>
+          <div class="flex flex-wrap gap-8">
+            {technologies.map(tech => (
+              <div class="flex-1 bg-background/40 p-4 rounded shadow-md grid place-items-center">
+                <span class="block hover:scale-110 transition size-10">
+                  {<tech.logo />}
+                </span>
+                <p class="text-sm pt-2 text-center">{tech.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

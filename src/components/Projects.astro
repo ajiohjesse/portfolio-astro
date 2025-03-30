@@ -1,0 +1,46 @@
+---
+import guessACard from '@/assets/images/guess-a-card.webp';
+import incognito from '@/assets/images/incognito.webp';
+import type { ImageMetadata } from 'astro';
+import ProjectCard from './ProjectCard.astro';
+
+interface ProjectCardProps {
+  name: string;
+  image: ImageMetadata;
+  description: string;
+  tags: string[];
+  githubUrl: string;
+  previewUrl: string;
+}
+
+const PROJECTS: ProjectCardProps[] = [
+  {
+    name: 'Guess A Card Game',
+    image: guessACard,
+    description:
+      'Select a card and guess its matching pair from a list of hidden cards. The goal is to guess all matching cards until every hidden card is open.',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    githubUrl: 'https://github.com/jesse-ai/jesse-portfolio-v3',
+    previewUrl: '/images/jesse-portfolio.png',
+  },
+  {
+    name: 'Incognito',
+    image: incognito,
+    description:
+      'An anonymous messaging app that allows users to send messages to each other without revealing their identity.',
+    tags: ['Next.js', 'TypeScript', 'Tailwind', 'MongoDB'],
+    githubUrl: 'https://github.com/jesse-ai/jesse-portfolio-v3',
+    previewUrl: '/images/jesse-portfolio.png',
+  },
+];
+---
+
+<section class="container">
+  <h2 class="text-3xl font-bold uppercase tracking-tight">
+    <span class="text-primary">4.</span> Side Projects.
+  </h2>
+
+  <div class="pt-12 grid gap-8 md:grid-cols-2">
+    {PROJECTS.map(project => <ProjectCard {...project} />)}
+  </div>
+</section>
