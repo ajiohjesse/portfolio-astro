@@ -1,19 +1,27 @@
-<header class="bg-background sticky top-0 z-50">
-  <div class="container relative h-16 flex items-center gap-12 justify-between">
+---
+import HeaderLink from './HeaderLink.astro';
+---
+
+<header class="bg-background sticky top-0 z-[99] isolate">
+  <div
+    class="container bg-background relative z-[99] h-16 flex items-center gap-12 justify-between"
+  >
     <span class="font-bold text-3xl">JA<span class="text-primary">.</span></span
     >
 
     <nav
       id="nav-menu"
-      class="bg-card w-full grid grid-rows-[0] text-muted
-			data-[open=true]:grid-rows-[1fr] absolute top-full
+      class="bg-card shadow-2xl shadow-black w-full grid opacity-0 scale-50 invisible text-muted
+			data-[open=true]:opacity-100 data-[open=true]:scale-100 data-[open=true]:visible top-full absolute
 			z-50 transition-all will-change-auto duration-300 overflow-hidden"
     >
-      <div class="grid gap-8 place-items-center py-12 font-bold">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="blog">Blog</a>
-        <a href="mailto:ajiohjesse@gmail.com">Contact</a>
+      <div
+        class="grid gap-8 place-items-center py-12 font-bold border border-muted m-4"
+      >
+        <HeaderLink href="/">Home</HeaderLink>
+        <HeaderLink href="/about">About</HeaderLink>
+        <HeaderLink href="/blog">Blog</HeaderLink>
+        <HeaderLink href="mailto:ajiohjesse@gmail.com">Contact</HeaderLink>
       </div>
     </nav>
 
