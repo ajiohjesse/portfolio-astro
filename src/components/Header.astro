@@ -9,15 +9,8 @@ import HeaderLink from './HeaderLink.astro';
     <span class="font-bold text-3xl">JA<span class="text-primary">.</span></span
     >
 
-    <nav
-      id="nav-menu"
-      class="bg-card shadow-2xl shadow-black w-full grid opacity-0 scale-50 invisible text-muted
-			data-[open=true]:opacity-100 data-[open=true]:scale-100 data-[open=true]:visible top-full absolute
-			z-50 transition-all will-change-auto duration-300 overflow-hidden"
-    >
-      <div
-        class="grid gap-8 place-items-center py-12 font-bold border border-muted m-4"
-      >
+    <nav id="nav-menu">
+      <div>
         <HeaderLink href="/">Home</HeaderLink>
         <HeaderLink href="/about">About</HeaderLink>
         <HeaderLink href="/blog">Blog</HeaderLink>
@@ -28,7 +21,7 @@ import HeaderLink from './HeaderLink.astro';
     <button
       id="nav-button"
       type="button"
-      class="bg-primary size-12 grid place-items-center"
+      class="bg-primary size-12 grid place-items-center md:hidden"
     >
       <span class="sr-only">Toogle nav menu</span>
       <span
@@ -59,6 +52,48 @@ import HeaderLink from './HeaderLink.astro';
         }
       }
     }
+  }
+
+  #nav-menu {
+    
+    @media screen and (max-width: 767px) {
+      background-color: var(--color-card);
+      box-shadow: var(--shadow-2xl);
+      width: 100%;
+      display: grid;
+      opacity: 0;
+      transform: scale(0);
+      visibility: hidden;
+      color: var(--color-muted);
+      z-index: 50;
+      transition: all 300ms;
+      overflow: hidden;
+      position: absolute;
+      top: 100%;
+
+      &[data-open='true'] {
+        opacity: 1;
+        transform: scale(100%);
+        visibility: visible;
+      }
+
+      &>div {
+        /* class="grid gap-8 place-items-center py-12 font-bold border border-muted m-4" */
+        display: grid;
+        gap: 32px;
+        place-items: center;
+        padding-block: 48px;
+        font-weight: bold;
+        margin: 8px;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      &>div {
+        display: flex;
+        gap: 48px;
+        align-items: center;
+      }
   }
 </style>
 
