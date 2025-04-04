@@ -32,19 +32,19 @@ const workHistory = [
 
   <div class="grid gap-8 pt-12 md:grid-cols-2">
     {
-      workHistory.map((job) => (
+      workHistory.map(job => (
         <div data-id="border-card" class="bg-card shadow-md">
           <div
             data-id="border-card-inner"
-            class="bg-card/80 rounded p-8 backdrop-blur-3xl"
+            class="bg-card/50 rounded p-8 backdrop-blur-3xl"
           >
-              <h3 class="text-xl font-bold">
-                <Sparkles text={job.role} client:load />
-              </h3>
+            <h3 class="text-xl font-bold">
+              <Sparkles text={job.role} client:load />
+            </h3>
             <h4 class="text-primary my-2 text-lg">{job.company}</h4>
             <p class="text-muted mb-4 text-base">{job.period}</p>
             <ul class="text-muted list-outside list-disc pl-4">
-              {job.responsibilities.map((responsibility) => (
+              {job.responsibilities.map(responsibility => (
                 <li class="mb-2">{responsibility}</li>
               ))}
             </ul>
