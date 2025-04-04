@@ -1,27 +1,30 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 
+/* :root {
+  --background: #0f1624;
+  --foreground: #f7fffe;
+  --primary: #88f7f1;
+  --card: #151e33;
+  --card-light: #202c48;
+  --muted: #afbebc;
+} */
+/* :root {
+  --background: #000000;
+  --foreground: #f7fffe;
+  --primary: #ff6500;
+  --card: #171614;
+  --card-light: #1e1d1d;
+  --muted: #d4dedd;
+} */
 :root {
-  --background: #050e15;
+  --background: #000000;
   --foreground: #f7fffe;
-  --primary: #e9c654;
-  --card: #101d27;
-  --muted: #afbebc;
+  --primary: #ff6500;
+  --card: #171614;
+  --card-light: #1e1d1d;
+  --muted: #d4dedd;
 }
-/* :root {
-  --background: #0f2536;
-  --foreground: #f7fffe;
-  --primary: #54c89f;
-  --card: #193347;
-  --muted: #afbebc;
-} */
-/* :root {
-  --background: #0d120e;
-  --foreground: #f7fffe;
-  --primary: #dcd675;
-  --card: #253028;
-  --muted: #afbebc;
-} */
 
 ::selection {
   background-color: var(--color-primary);
@@ -33,6 +36,7 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-card: var(--card);
+  --color-card-light: var(--card-light);
   --color-muted: var(--muted);
   --animate-grow-shrink: growAndShrink 1.5s cubic-bezier(0.4, 0, 0.6, 1)
     forwards;
@@ -53,6 +57,10 @@
     font-weight: 700;
     font-style: normal;
     font-display: swap;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {

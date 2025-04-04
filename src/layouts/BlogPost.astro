@@ -13,153 +13,46 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
-    <style>
-      .hero-image {
-        width: 100%;
-        margin-top: 2rem;
-      }
-      .hero-image img {
-        display: block;
-        margin: 0 auto;
-        border-radius: 12px;
-      }
-      /* .prose {
-        width: 720px;
-        max-width: calc(100% - 2em);
-        margin: auto;
-        padding: 1em;
-        color: rgb(var(--gray-dark));
-      } */
-      .title {
-        margin-bottom: 1em;
-        padding: 1em 0;
-        text-align: center;
-        line-height: 1;
-      }
-      .title h1 {
-        margin: 0 0 0.5em 0;
-      }
-      .date {
-        margin-bottom: 0.5em;
-        color: rgb(var(--gray));
-      }
-      .last-updated-on {
-        font-style: italic;
-      }
-    </style>
   </head>
-
   <body>
     <Header />
-    <main class="container">
-      <article>
-        <div class="hero-image">
-          {
-            heroImage && (
-              <img width={1020} height={510} src={heroImage} alt="" />
-            )
-          }
-        </div>
-        <div class="prose prose-invert prose-a:text-primary">
-          <div class="title">
-            <div class="date">
-              <FormattedDate date={pubDate} />
-              {
-                updatedDate && (
-                  <div class="last-updated-on">
-                    Last updated on <FormattedDate date={updatedDate} />
-                  </div>
-                )
-              }
+    <main class="max-w-4xl mx-auto px-6 py-12">
+      <article class="prose prose-invert prose-lg prose-a:text-primary mx-auto">
+        {
+          heroImage && (
+            <div class="w-full overflow-hidden rounded-xl mb-8">
+              <img class="w-full h-72 object-cover" src={heroImage} alt="" />
             </div>
-            <h1>{title}</h1>
-            <hr />
+          )
+        }
+        <div class="text-center">
+          <h1 class="text-4xl font-bold mt-4">{title}</h1>
+          <div
+            class="mt-4 flex flex-wrap justify-center gap-4 text-muted text-base"
+          >
+            <p class="flex items-center gap-2">
+              <span class="font-semibold">Published at:</span>
+              <FormattedDate date={pubDate} />
+            </p>
+            {
+              updatedDate && (
+                <p class="flex items-center gap-2">
+                  <span class="font-semibold">Updated at:</span>{' '}
+                  <FormattedDate date={updatedDate} />
+                </p>
+              )
+            }
           </div>
+          <div class="mt-4 text-muted text-base font-medium">
+            By Jesse Ajioh
+          </div>
+        </div>
+        <div class="mt-6 border-t border-muted/20 pt-6">
           <slot />
         </div>
       </article>
     </main>
+
     <Footer />
   </body>
 </html>
-
-<!-- <style scoped>
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 0 0 0.5rem 0;
-    color: rgb(var(--black));
-    line-height: 1.2;
-  }
-  h1 {
-    font-size: 3.052em;
-  }
-  h2 {
-    font-size: 2.441em;
-  }
-  h3 {
-    font-size: 1.953em;
-  }
-  h4 {
-    font-size: 1.563em;
-  }
-  h5 {
-    font-size: 1.25em;
-  }
-
-  strong,
-  b {
-    font-weight: 700;
-  }
-  a {
-    color: var(--accent);
-  }
-  a:hover {
-    color: var(--accent);
-  }
-
-  p {
-    margin-bottom: 1em;
-  }
-  .prose p {
-    margin-bottom: 2em;
-  }
-
-  textarea,
-  input {
-    font-size: 16px;
-  }
-  table {
-    width: 100%;
-  }
-  img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  code {
-    padding: 2px 5px;
-    background-color: rgb(var(--gray-light));
-    border-radius: 2px;
-  }
-  pre {
-    padding: 1.5em;
-    border-radius: 8px;
-  }
-  pre > code {
-    all: unset;
-  }
-  blockquote {
-    border-left: 4px solid var(--accent);
-    padding: 0 0 0 20px;
-    margin: 0px;
-    font-size: 1.333em;
-  }
-  hr {
-    border: none;
-    border-top: 1px solid rgb(var(--gray-light));
-  }
-</style> -->

@@ -39,7 +39,7 @@ const techStacks = {
   database: [
     { name: 'PostgreSQL', logo: PostgresIcon },
     { name: 'MongoDB', logo: MongoIcon },
-    { name: 'Turso (SQLite)', logo: TursoIcon },
+    { name: 'Sqlite', logo: SqliteIcon },
     { name: 'Firebase', logo: FirebaseIcon },
   ],
   infrastructure: [
@@ -63,7 +63,7 @@ const techStacks = {
           <h3 class="text-xl font-bold mb-6 capitalize">{category}</h3>
           <div class="flex flex-wrap gap-8">
             {technologies.map(tech => (
-              <div class="flex-1 bg-background/40 p-4 rounded shadow-md grid place-items-center">
+              <div class="flex-1 bg-card-light p-4 rounded shadow grid place-items-center">
                 <span class="block hover:scale-110 transition size-10">
                   {<tech.logo />}
                 </span>

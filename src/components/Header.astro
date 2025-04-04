@@ -6,13 +6,13 @@ import HeaderLink from './HeaderLink.astro';
   <div
     class="container bg-background relative z-[99] h-16 flex items-center gap-12 justify-between"
   >
-    <span class="font-bold text-3xl">JA<span class="text-primary">.</span></span
+    <a href="/" class="font-bold text-3xl">JA<span class="text-primary">.</span></a
     >
 
     <nav id="nav-menu">
       <div>
         <HeaderLink href="/">Home</HeaderLink>
-        <HeaderLink href="/about">About</HeaderLink>
+        <!-- <HeaderLink href="/#portfolio">Portfolio</HeaderLink> -->
         <HeaderLink href="/blog">Blog</HeaderLink>
         <HeaderLink href="mailto:ajiohjesse@gmail.com">Contact</HeaderLink>
       </div>
@@ -78,7 +78,6 @@ import HeaderLink from './HeaderLink.astro';
       }
 
       &>div {
-        /* class="grid gap-8 place-items-center py-12 font-bold border border-muted m-4" */
         display: grid;
         gap: 32px;
         place-items: center;
