@@ -1,5 +1,5 @@
 @import "tailwindcss";
-/* @plugin "@tailwindcss/typography"; */
+@plugin "@tailwindcss/typography";
 
 :root {
   --background: #060e17;
@@ -52,7 +52,7 @@
 
   @media (min-width: 1024px) {
     body {
-      font-size: 1.25rem;
+      font-size: 1.125rem;
     }
   }
 }

@@ -1,6 +1,8 @@
 ---
 import guessACard from "@/assets/images/guess-a-card.webp";
 import incognito from "@/assets/images/incognito.webp";
+import incognitoV2 from "@/assets/images/incognito-v2.jpg";
+import cashflow from "@/assets/images/cashflow.jpg";
 import type { ImageMetadata } from "astro";
 import ProjectCard from "./ProjectCard.astro";
 import SectionHeader from "./SectionHeader";
@@ -21,8 +23,8 @@ const PROJECTS: ProjectCardProps[] = [
     description:
       "Select a card and guess its matching pair from a list of hidden cards. The goal is to guess all matching cards until every hidden card is open.",
     tags: ["HTML", "CSS", "JavaScript"],
-    githubUrl: "https://github.com/jesse-ai/jesse-portfolio-v3",
-    previewUrl: "/images/jesse-portfolio.png",
+    githubUrl: "https://github.com/ajiohjesse/guess-a-card-V2",
+    previewUrl: "https://guess-a-card-v2.vercel.app/",
   },
   {
     name: "Incognito",
@@ -30,8 +32,40 @@ const PROJECTS: ProjectCardProps[] = [
     description:
       "An anonymous messaging app that allows users to send messages to each other without revealing their identity.",
     tags: ["Next.js", "TypeScript", "Tailwind", "MongoDB"],
-    githubUrl: "https://github.com/jesse-ai/jesse-portfolio-v3",
-    previewUrl: "/images/jesse-portfolio.png",
+    githubUrl: "https://github.com/ajiohjesse/incognito",
+    previewUrl: "https://incognito-message.vercel.app",
+  },
+  {
+    name: "Incognito v2",
+    image: incognitoV2,
+    description:
+      "A real-time anonymous messaging app with end-to-end chat encryption and reply functionality.",
+    tags: [
+      "React",
+      "TypeScript",
+      "Tailwind",
+      "Express",
+      "PostgreSQL",
+      "Socket.IO",
+    ],
+    githubUrl: "https://github.com/ajiohjesse/incognito-frontend",
+    previewUrl: "https://incognito.rehx.name.ng",
+  },
+  {
+    name: "CashFlow",
+    image: cashflow,
+    description:
+      "Minimalist financial management platform designed for effortlessly managing income and expenses, with AI powered monthly financial summaries.",
+    tags: [
+      "React",
+      "TypeScript",
+      "Tailwind",
+      "Express",
+      "PostgreSQL",
+      "Google Gemini",
+    ],
+    githubUrl: "https://github.com/ajiohjesse/cashflow-frontend",
+    previewUrl: "https://cashflow.rehx.name.ng",
   },
 ];
 ---
@@ -40,6 +74,6 @@ const PROJECTS: ProjectCardProps[] = [
   <SectionHeader number={4} heading="Side Projects" />
 
   <div class="grid gap-8 pt-12 md:grid-cols-2">
-    {PROJECTS.map((project) => <ProjectCard {...project} />)}
+    {PROJECTS.map(project => <ProjectCard {...project} />)}
   </div>
 </section>

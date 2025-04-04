@@ -3,9 +3,9 @@ import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 import PageLayout from "@/layouts/PageLayout.astro";
 
-const posts = (await getCollection("blog"))
-  .filter(post => post.data.isPublished)
-  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+const posts = (await getCollection("blog", post => post.data.isPublished)).sort(
+  (a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf(),
+);
 ---
 
 <PageLayout>

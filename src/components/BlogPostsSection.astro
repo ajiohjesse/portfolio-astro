@@ -3,9 +3,9 @@ import { getCollection } from "astro:content";
 import SectionHeader from "./SectionHeader";
 import FormattedDate from "./FormattedDate.astro";
 
-const posts = (await getCollection("blog"))
-  .filter((post) => post.data.isPublished)
-  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+const posts = (await getCollection("blog", post => post.data.isPublished)).sort(
+  (a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf(),
+);
 ---
 
 <section class="container">
@@ -14,7 +14,7 @@ const posts = (await getCollection("blog"))
   <div class="pt-12 pb-8">
     {
       posts.length > 0 ? (
-        posts.map((post) => (
+        posts.map(post => (
           <a href={`/blog/${post.id}`} class="block">
             <div class="bg-card group mb-6 rounded p-6 shadow-md transition hover:shadow-xl">
               <h3 class="group-hover:text-primary text-xl font-bold transition">
