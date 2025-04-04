@@ -25,10 +25,10 @@ const generateSparkle = (color = DEFAULT_COLOR) => {
 type Sparkle = ReturnType<typeof generateSparkle>;
 
 const Sparkles = ({
-  children,
+  text,
   className,
 }: {
-  children: React.ReactNode;
+  text: string;
   className?: string;
 }) => {
   const [sparkles, setSparkles] = useState<Sparkle[]>([]);
@@ -62,7 +62,7 @@ const Sparkles = ({
           style={sparkle.style}
         />
       ))}
-      <strong className="relative z-[1] inline-block">{children}</strong>
+      <strong className="relative z-[1] inline-block">{text}</strong>
     </span>
   );
 };

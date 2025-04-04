@@ -9,7 +9,7 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   site: "https://rehx.name.ng",
-  integrations: [mdx(), sitemap(), react({ experimentalReactChildren: true })],
+  integrations: [mdx(), sitemap(), react()],
   vite: {
     plugins: [tailwindcss()],
   },

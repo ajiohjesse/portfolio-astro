@@ -38,9 +38,9 @@ const workHistory = [
             data-id="border-card-inner"
             class="bg-card/80 rounded p-8 backdrop-blur-3xl"
           >
-            <Sparkles client:load>
-              <h3 class="text-xl font-bold">{job.role}</h3>
-            </Sparkles>
+              <h3 class="text-xl font-bold">
+                <Sparkles text={job.role} client:load />
+              </h3>
             <h4 class="text-primary my-2 text-lg">{job.company}</h4>
             <p class="text-muted mb-4 text-base">{job.period}</p>
             <ul class="text-muted list-outside list-disc pl-4">

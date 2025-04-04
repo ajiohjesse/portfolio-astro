@@ -18,9 +18,9 @@ const Services = () => {
               className="bg-card/80 flex h-full flex-1 flex-col rounded p-4 shadow-2xl backdrop-blur-3xl md:p-6"
             >
               {service.icon}
-              <Sparkles className="w-fit">
-                <h3 className="py-4 text-xl font-bold">{service.name}</h3>
-              </Sparkles>
+                <h3 className="py-4 text-xl w-fit font-bold">
+                <Sparkles text={service.name} />
+                  </h3>
               <p className="text-muted">{service.description}</p>
             </div>
           </div>
