@@ -3,6 +3,7 @@ import guessACard from '@/assets/images/guess-a-card.webp';
 import incognito from '@/assets/images/incognito.webp';
 import type { ImageMetadata } from 'astro';
 import ProjectCard from './ProjectCard.astro';
+import SectionHeader from './SectionHeader';
 
 interface ProjectCardProps {
   name: string;
@@ -36,9 +37,7 @@ const PROJECTS: ProjectCardProps[] = [
 ---
 
 <section class="container scroll-my-18" id="portfolio">
-  <h2 class="text-3xl font-bold uppercase tracking-tight">
-    <span class="text-primary">4.</span> Side Projects.
-  </h2>
+  <SectionHeader number={4} heading="Side Projects" />
 
   <div class="pt-12 grid gap-8 md:grid-cols-2">
     {PROJECTS.map(project => <ProjectCard {...project} />)}

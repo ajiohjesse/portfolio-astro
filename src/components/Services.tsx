@@ -3,20 +3,19 @@ import ProjectMgt from '@/icons/ProjectMgt';
 import UiUx from '@/icons/UiUx';
 import WebDev from '@/icons/WebDev';
 import Sparkles from './Sparkles';
+import SectionHeader from './SectionHeader';
 
 const Services = () => {
   return (
     <section className="container">
-      <h2 className="text-3xl font-bold uppercase tracking-tight">
-        <span className="text-primary">1.</span> What I DO.
-      </h2>
+      <SectionHeader number={1} heading="What I Do" />
 
       <div className="relative grid gap-8 pt-12 sm:grid-cols-2">
         {SERVICES.map((service, index) => (
           <div data-id="border-card" key={index} className="shadow-2xl h-full">
             <div
               data-id="border-card-inner"
-              className="flex h-full flex-1 flex-col rounded bg-card p-4 shadow-2xl md:p-6"
+              className="flex h-full flex-1 flex-col rounded bg-card/80 backdrop-blur-3xl p-4 shadow-2xl md:p-6"
             >
               {service.icon}
               <Sparkles className="w-fit">

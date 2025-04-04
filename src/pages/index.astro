@@ -11,6 +11,7 @@ import Projects from '@/components/Projects.astro';
 import Footer from '@/components/Footer.astro';
 import SectionDivider from '@/components/SectionDivider.astro';
 import Header from '@/components/Header.astro';
+import BgGlow from '@/components/BgGlow.astro';
 ---
 
 <!doctype html>
@@ -19,7 +20,8 @@ import Header from '@/components/Header.astro';
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <main>
+    <BgGlow />
+    <main class="relative z-10">
       <Header />
       <div class="py-12 pt-4 sm:pt-12 grid gap-y-24">
         <LandingHero />

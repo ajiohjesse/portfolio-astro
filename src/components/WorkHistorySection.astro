@@ -1,4 +1,5 @@
 ---
+import SectionHeader from './SectionHeader';
 import Sparkles from './Sparkles';
 
 const workHistory = [
@@ -27,15 +28,16 @@ const workHistory = [
 ---
 
 <section class="container">
-  <h2 class="text-3xl font-bold uppercase tracking-tight">
-    <span class="text-primary">3.</span> Work Histroy.
-  </h2>
+  <SectionHeader number={3} heading="Work Histroy" />
 
   <div class="grid gap-8 md:grid-cols-2 pt-12">
     {
       workHistory.map(job => (
         <div data-id="border-card" class="bg-card shadow-md">
-          <div data-id="border-card-inner" class="bg-card rounded p-8">
+          <div
+            data-id="border-card-inner"
+            class="rounded bg-card/80 backdrop-blur-3xl p-8"
+          >
             <Sparkles client:load>
               <h3 class="text-xl font-bold">{job.role}</h3>
             </Sparkles>

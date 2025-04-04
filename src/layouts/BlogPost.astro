@@ -4,10 +4,12 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import Image from 'astro/components/Image.astro';
+import profile from '@/assets/images/profile-avatar.png';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, publishedAt, updatedAt, heroImage } = Astro.props;
 ---
 
 <html lang="en">
@@ -27,24 +29,31 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         }
         <div class="text-center">
           <h1 class="text-4xl font-bold mt-4">{title}</h1>
+
           <div
-            class="mt-4 flex flex-wrap justify-center gap-4 text-muted text-base"
+            class="mt-4 text-muted text-base font-medium flex items-center gap-4"
           >
-            <p class="flex items-center gap-2">
+            <Image
+              src={profile}
+              alt="Jesse Ajioh"
+              class="size-10 !m-0 border border-muted/20 rounded-full object-cover overflow-hidden object-top"
+            />
+            <span>By Jesse Ajioh</span>
+          </div>
+
+          <div class="mt-4 flex flex-wrap gap-4 text-muted text-base">
+            <time class="flex items-center gap-2 !m-0">
               <span class="font-semibold">Published at:</span>
-              <FormattedDate date={pubDate} />
-            </p>
+              <FormattedDate date={publishedAt} />
+            </time>
             {
-              updatedDate && (
-                <p class="flex items-center gap-2">
+              updatedAt && (
+                <time class="flex items-center gap-2 !m-0">
                   <span class="font-semibold">Updated at:</span>{' '}
-                  <FormattedDate date={updatedDate} />
-                </p>
+                  <FormattedDate date={updatedAt} />
+                </time>
               )
             }
-          </div>
-          <div class="mt-4 text-muted text-base font-medium">
-            By Jesse Ajioh
           </div>
         </div>
         <div class="mt-6 border-t border-muted/20 pt-6">

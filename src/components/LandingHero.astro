@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import profileImage from '@/assets/images/profile-small.png';
 import Sparkles from '@/components/Sparkles';
+import Mail from '@/icons/Mail';
 ---
 
 <section
@@ -9,14 +10,14 @@ import Sparkles from '@/components/Sparkles';
 >
   <div class="flex-1 relative z-1 pt-52 md:pt-0">
     <h1
-      class="font-bold mb-2 text-5xl md:text-[clamp(3rem,6vw,4rem)] leading-tight uppercase"
+      class="font-bold mb-2 text-4xl md:text-[clamp(2rem,6vw,3rem)] leading-tight uppercase"
     >
       <Sparkles client:load><span> Hi,</span></Sparkles>
       <br />
       <Sparkles client:load><span> I'm Jesse.</span> </Sparkles>
     </h1>
 
-    <h2 class="text-xl md:text-2xl text-primary whitespace-nowrap">
+    <h2 class="text-lg md:text-2xl text-primary whitespace-nowrap">
       | Web Developer
     </h2>
     <p class="mt-4 max-w-[35ch] text-pretty text-muted">
@@ -26,23 +27,17 @@ import Sparkles from '@/components/Sparkles';
     </p>
 
     <a
-      href="#"
-      class="h-16 flex w-max mt-8 border-2 border-primary hover:shadow-xl hover:shadow-primary/20 active:scale-95 transition group"
+      href="mailto:ajiohjesse@gmail.com"
+      class="py-4 px-12 rounded mt-8 flex items-center gap-2 bg-primary w-max leading-0 p-0 hover:shadow-2xl shadow-primary/30 active:scale-95 transition-all"
     >
-      <span
-        class="bg-primary grid place-items-center text-background h-full px-6 transition"
-        >Got a project?</span
-      >
-      <span class="h-full grid place-items-center px-6 text-primary"
-        >Let's talk.</span
-      >
+      <Mail className="size-5" /> Have a project? Let's talk.
     </a>
   </div>
   <div
-    class="flex-1 absolute top-0 max-w-[300px] md:max-w-[400px] md:relative isolate"
+    class="flex-1 absolute top-8 md:top-0 max-w-[280px] sm:max-w-[340px] md:max-w-[400px] md:relative isolate"
   >
     <div
-      class="absolute inset-0 border-4 border-primary top-24 left-12 -bottom-2 -right-4 z-0"
+      class="absolute inset-0 border-4 border-primary/40 top-24 left-12 -right-4 z-0"
     >
     </div>
     <Image
@@ -53,7 +48,7 @@ import Sparkles from '@/components/Sparkles';
       loading="eager"
     />
     <div
-      class="absolute -inset-4 bg-gradient-to-b via-background/90 md:via-background/80 from-transparent to-background z-[1]"
+      class="absolute -inset-4 bg-gradient-to-b via-background/80 blur-md md:blur-none md:via-transparent from-transparent to-background z-[1]"
     >
     </div>
   </div>

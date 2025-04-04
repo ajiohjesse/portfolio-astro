@@ -1,29 +1,13 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 
-/* :root {
-  --background: #0f1624;
-  --foreground: #f7fffe;
-  --primary: #88f7f1;
-  --card: #151e33;
-  --card-light: #202c48;
-  --muted: #afbebc;
-} */
-/* :root {
-  --background: #000000;
-  --foreground: #f7fffe;
-  --primary: #ff6500;
-  --card: #171614;
-  --card-light: #1e1d1d;
-  --muted: #d4dedd;
-} */
 :root {
-  --background: #000000;
-  --foreground: #f7fffe;
-  --primary: #ff6500;
-  --card: #171614;
-  --card-light: #1e1d1d;
-  --muted: #d4dedd;
+  --background: #060e17;
+  --foreground: #f9fafb;
+  --primary: #3b82f6;
+  --card: #0e1c2c;
+  --card-light: #172637;
+  --muted: #c1def4;
 }
 
 ::selection {
@@ -59,12 +43,19 @@
     font-display: swap;
   }
 
+  @font-face {
+    font-family: 'MavenPro';
+    src: url('/fonts/maven-pro.ttf') format('truetype');
+    font-style: normal;
+    font-display: swap;
+  }
+
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    font-family: 'Atkinson', sans-serif;
+    font-family: 'MavenPro', sans-serif;
     margin: 0;
     padding: 0;
     text-align: left;
