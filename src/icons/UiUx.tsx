@@ -1,6 +1,6 @@
-import type { SVGComponent } from '@/types';
+import type { SVGComponent } from "@/types";
 
-const UiUx: SVGComponent = props => {
+const UiUx: SVGComponent = (props) => {
   return (
     <svg
       stroke="currentColor"

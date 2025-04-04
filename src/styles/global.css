@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
 :root {
@@ -29,23 +29,8 @@
 
 @layer base {
   @font-face {
-    font-family: 'Atkinson';
-    src: url('/fonts/atkinson-regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Atkinson';
-    src: url('/fonts/atkinson-bold.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'MavenPro';
-    src: url('/fonts/maven-pro.ttf') format('truetype');
+    font-family: "MavenPro";
+    src: url("/fonts/maven-pro.ttf") format("truetype");
     font-style: normal;
     font-display: swap;
   }
@@ -55,7 +40,7 @@
   }
 
   body {
-    font-family: 'MavenPro', sans-serif;
+    font-family: "MavenPro", sans-serif;
     margin: 0;
     padding: 0;
     text-align: left;
@@ -63,8 +48,6 @@
     word-wrap: break-word;
     overflow-wrap: break-word;
     color: var(--color-foreground);
-    /* font-size: 1.125rem; */
-    /* line-height: 1.5; */
   }
 
   @media (min-width: 1024px) {
@@ -88,7 +71,7 @@
   }
 }
 
-[data-id='border-card'] {
+[data-id="border-card"] {
   overflow: hidden;
   position: relative;
   border-radius: 4px;
@@ -96,8 +79,8 @@
   padding: 1px;
 }
 
-[data-id='border-card']::after {
-  content: '';
+[data-id="border-card"]::after {
+  content: "";
   background-image: conic-gradient(
     transparent,
     transparent,
@@ -120,7 +103,7 @@
   will-change: transform, opacity;
 }
 
-[data-id='border-card-inner'] {
+[data-id="border-card-inner"] {
   position: relative;
   z-index: 10;
   height: 100%;

@@ -1,10 +1,10 @@
 ---
-import { getCollection } from 'astro:content';
-import SectionHeader from './SectionHeader';
-import FormattedDate from './FormattedDate.astro';
+import { getCollection } from "astro:content";
+import SectionHeader from "./SectionHeader";
+import FormattedDate from "./FormattedDate.astro";
 
-const posts = (await getCollection('blog'))
-  .filter(post => post.data.isPublished)
+const posts = (await getCollection("blog"))
+  .filter((post) => post.data.isPublished)
   .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
 ---
 
@@ -14,13 +14,13 @@ const posts = (await getCollection('blog'))
   <div class="pt-12 pb-8">
     {
       posts.length > 0 ? (
-        posts.map(post => (
+        posts.map((post) => (
           <a href={`/blog${post.id}`} class="block">
-            <div class="bg-card p-6 rounded shadow-md mb-6 hover:shadow-xl transition group">
-              <h3 class="text-xl font-bold group-hover:text-primary transition">
+            <div class="bg-card group mb-6 rounded p-6 shadow-md transition hover:shadow-xl">
+              <h3 class="group-hover:text-primary text-xl font-bold transition">
                 {post.data.title}
               </h3>
-              <p class="text-muted block text-sm mb-4 mt-2">
+              <p class="text-muted mt-2 mb-4 block text-sm">
                 <FormattedDate date={post.data.publishedAt} />
               </p>
               <p class="text-muted">{post.data.description}</p>
@@ -28,7 +28,7 @@ const posts = (await getCollection('blog'))
           </a>
         ))
       ) : (
-        <p class="text-lg text-muted text-center">No post published yet.</p>
+        <p class="text-muted text-center text-lg">No post published yet.</p>
       )
     }
   </div>
@@ -37,7 +37,7 @@ const posts = (await getCollection('blog'))
     posts.length > 0 ? (
       <a
         href="/blog"
-        class="py-6 px-12 rounded mt-8 block bg-primary w-max mx-auto leading-0 p-0 hover:shadow-2xl shadow-primary/30 active:scale-95 transition-all"
+        class="bg-primary shadow-primary/30 mx-auto mt-8 block w-max rounded p-0 px-12 py-6 leading-0 transition-all hover:shadow-2xl active:scale-95"
       >
         See all Posts
       </a>

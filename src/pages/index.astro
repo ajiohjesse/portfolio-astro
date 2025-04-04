@@ -1,17 +1,17 @@
 ---
-import BlogPostsSection from '@/components/BlogPostsSection.astro';
-import TechStackSection from '@/components/TechStackSection.astro';
-import WorkHistorySection from '@/components/WorkHistorySection.astro';
-import BaseHead from '../components/BaseHead.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BlogPostsSection from "@/components/BlogPostsSection.astro";
+import TechStackSection from "@/components/TechStackSection.astro";
+import WorkHistorySection from "@/components/WorkHistorySection.astro";
+import BaseHead from "../components/BaseHead.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
-import LandingHero from '@/components/LandingHero.astro';
-import Services from '@/components/Services';
-import Projects from '@/components/Projects.astro';
-import Footer from '@/components/Footer.astro';
-import SectionDivider from '@/components/SectionDivider.astro';
-import Header from '@/components/Header.astro';
-import BgGlow from '@/components/BgGlow.astro';
+import LandingHero from "@/components/LandingHero.astro";
+import Services from "@/components/Services";
+import Projects from "@/components/Projects.astro";
+import Footer from "@/components/Footer.astro";
+import SectionDivider from "@/components/SectionDivider.astro";
+import Header from "@/components/Header.astro";
+import BgGlow from "@/components/BgGlow.astro";
 ---
 
 <!doctype html>
@@ -23,7 +23,7 @@ import BgGlow from '@/components/BgGlow.astro';
     <BgGlow />
     <main class="relative z-10">
       <Header />
-      <div class="py-12 pt-4 sm:pt-12 grid gap-y-24">
+      <div class="grid gap-y-24 py-12 pt-4 sm:pt-12">
         <LandingHero />
         <SectionDivider />
         <Services client:load />

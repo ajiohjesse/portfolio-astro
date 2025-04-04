@@ -1,9 +1,9 @@
 ---
-import guessACard from '@/assets/images/guess-a-card.webp';
-import incognito from '@/assets/images/incognito.webp';
-import type { ImageMetadata } from 'astro';
-import ProjectCard from './ProjectCard.astro';
-import SectionHeader from './SectionHeader';
+import guessACard from "@/assets/images/guess-a-card.webp";
+import incognito from "@/assets/images/incognito.webp";
+import type { ImageMetadata } from "astro";
+import ProjectCard from "./ProjectCard.astro";
+import SectionHeader from "./SectionHeader";
 
 interface ProjectCardProps {
   name: string;
@@ -16,22 +16,22 @@ interface ProjectCardProps {
 
 const PROJECTS: ProjectCardProps[] = [
   {
-    name: 'Guess A Card Game',
+    name: "Guess A Card Game",
     image: guessACard,
     description:
-      'Select a card and guess its matching pair from a list of hidden cards. The goal is to guess all matching cards until every hidden card is open.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
-    githubUrl: 'https://github.com/jesse-ai/jesse-portfolio-v3',
-    previewUrl: '/images/jesse-portfolio.png',
+      "Select a card and guess its matching pair from a list of hidden cards. The goal is to guess all matching cards until every hidden card is open.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    githubUrl: "https://github.com/jesse-ai/jesse-portfolio-v3",
+    previewUrl: "/images/jesse-portfolio.png",
   },
   {
-    name: 'Incognito',
+    name: "Incognito",
     image: incognito,
     description:
-      'An anonymous messaging app that allows users to send messages to each other without revealing their identity.',
-    tags: ['Next.js', 'TypeScript', 'Tailwind', 'MongoDB'],
-    githubUrl: 'https://github.com/jesse-ai/jesse-portfolio-v3',
-    previewUrl: '/images/jesse-portfolio.png',
+      "An anonymous messaging app that allows users to send messages to each other without revealing their identity.",
+    tags: ["Next.js", "TypeScript", "Tailwind", "MongoDB"],
+    githubUrl: "https://github.com/jesse-ai/jesse-portfolio-v3",
+    previewUrl: "/images/jesse-portfolio.png",
   },
 ];
 ---
@@ -39,7 +39,7 @@ const PROJECTS: ProjectCardProps[] = [
 <section class="container scroll-my-18" id="portfolio">
   <SectionHeader number={4} heading="Side Projects" />
 
-  <div class="pt-12 grid gap-8 md:grid-cols-2">
-    {PROJECTS.map(project => <ProjectCard {...project} />)}
+  <div class="grid gap-8 pt-12 md:grid-cols-2">
+    {PROJECTS.map((project) => <ProjectCard {...project} />)}
   </div>
 </section>

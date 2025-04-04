@@ -1,26 +1,26 @@
 ---
-import { Image } from 'astro:assets';
-import profileImage from '@/assets/images/profile-small.png';
-import Sparkles from '@/components/Sparkles';
-import Mail from '@/icons/Mail';
+import { Image } from "astro:assets";
+import profileImage from "@/assets/images/profile-small.png";
+import Sparkles from "@/components/Sparkles";
+import Mail from "@/icons/Mail";
 ---
 
 <section
-  class="container relative flex flex-col-reverse items-center md:flex-row gap-12"
+  class="relative container flex flex-col-reverse items-center gap-12 md:flex-row"
 >
-  <div class="flex-1 relative z-1 pt-52 md:pt-0">
+  <div class="relative z-1 flex-1 pt-52 md:pt-0">
     <h1
-      class="font-bold mb-2 text-4xl md:text-[clamp(2rem,6vw,3rem)] leading-tight uppercase"
+      class="mb-2 text-4xl leading-tight font-bold uppercase md:text-[clamp(2rem,6vw,3rem)]"
     >
       <Sparkles client:load><span> Hi,</span></Sparkles>
       <br />
       <Sparkles client:load><span> I'm Jesse.</span> </Sparkles>
     </h1>
 
-    <h2 class="text-lg md:text-2xl text-primary whitespace-nowrap">
+    <h2 class="text-primary text-lg whitespace-nowrap md:text-2xl">
       | Web Developer
     </h2>
-    <p class="mt-4 max-w-[35ch] text-pretty text-muted">
+    <p class="text-muted mt-4 max-w-[35ch] text-pretty">
       I'm Jesse Ajioh, a Fullstack Web Developer with proficiency in modern
       tools and frameworks, and a passion for building scalable web applications
       that solve real-world problems.
@@ -28,27 +28,27 @@ import Mail from '@/icons/Mail';
 
     <a
       href="mailto:ajiohjesse@gmail.com"
-      class="py-4 px-12 rounded mt-8 flex items-center gap-2 bg-primary w-max leading-0 p-0 hover:shadow-2xl shadow-primary/30 active:scale-95 transition-all"
+      class="bg-primary shadow-primary/30 mt-8 flex w-max items-center gap-2 rounded p-0 px-12 py-4 leading-0 transition-all hover:shadow-2xl active:scale-95"
     >
       <Mail className="size-5" /> Have a project? Let's talk.
     </a>
   </div>
   <div
-    class="flex-1 absolute top-8 md:top-0 max-w-[280px] sm:max-w-[340px] md:max-w-[400px] md:relative isolate"
+    class="absolute top-8 isolate max-w-[280px] flex-1 sm:max-w-[340px] md:relative md:top-0 md:max-w-[400px]"
   >
     <div
-      class="absolute inset-0 border-4 border-primary/40 top-24 left-12 -right-4 z-0"
+      class="border-primary/40 absolute inset-0 top-24 -right-4 left-12 z-0 border-4"
     >
     </div>
     <Image
       src={profileImage}
       alt="Jesse - Fullstack Developer"
-      class="w-full relative z-[1] object-cover object-top rounded-lg"
+      class="relative z-[1] w-full rounded-lg object-cover object-top"
       priority
       loading="eager"
     />
     <div
-      class="absolute -inset-4 bg-gradient-to-b via-background/80 blur-md md:blur-none md:via-transparent from-transparent to-background z-[1]"
+      class="via-background/80 to-background absolute -inset-4 z-[1] bg-gradient-to-b from-transparent blur-md md:via-transparent md:blur-none"
     >
     </div>
   </div>

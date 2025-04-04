@@ -1,13 +1,13 @@
-import { cn } from '@/lib/utils';
-import type { SVGComponent } from '@/types';
+import { cn } from "@/lib/utils";
+import type { SVGComponent } from "@/types";
 
 export const SparkleStar: SVGComponent<{
   color?: string;
   size?: number;
-}> = props => {
-  const { color = '#FFC700', size = 100, className, ...rest } = props;
+}> = (props) => {
+  const { color = "#FFC700", size = 100, className, ...rest } = props;
   return (
-    <span className="pointer-events-none absolute inset-0 animate-grow-shrink">
+    <span className="animate-grow-shrink pointer-events-none absolute inset-0">
       <svg
         width={size}
         height={size}
@@ -15,8 +15,8 @@ export const SparkleStar: SVGComponent<{
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className={cn(
-          'pointer-events-none absolute z-[2] inline-block animate-spin-half',
-          className
+          "animate-spin-half pointer-events-none absolute z-[2] inline-block",
+          className,
         )}
         {...rest}
       >

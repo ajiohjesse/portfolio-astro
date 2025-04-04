@@ -1,6 +1,6 @@
-import type { SVGComponent } from '@/types';
+import type { SVGComponent } from "@/types";
 
-const ProjectMgt: SVGComponent = props => {
+const ProjectMgt: SVGComponent = (props) => {
   return (
     <svg
       stroke="currentColor"

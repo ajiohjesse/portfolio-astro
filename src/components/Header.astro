@@ -1,12 +1,13 @@
 ---
-import HeaderLink from './HeaderLink.astro';
+import HeaderLink from "./HeaderLink.astro";
 ---
 
-<header class="bg-background sticky top-0 z-[99] isolate">
+<header class="bg-background sticky top-0 isolate z-[99]">
   <div
-    class="container bg-background relative z-[99] h-16 flex items-center gap-12 justify-between"
+    class="bg-background relative z-[99] container flex h-16 items-center justify-between gap-12"
   >
-    <a href="/" class="font-bold text-3xl">JA<span class="text-primary">.</span></a
+    <a href="/" class="text-3xl font-bold"
+      >JA<span class="text-primary">.</span></a
     >
 
     <nav id="nav-menu">
@@ -21,22 +22,22 @@ import HeaderLink from './HeaderLink.astro';
     <button
       id="nav-button"
       type="button"
-      class="bg-primary size-12 grid place-items-center md:hidden"
+      class="bg-primary grid size-12 place-items-center md:hidden"
     >
       <span class="sr-only">Toogle nav menu</span>
       <span
         id="nav-bars"
-        class="w-6 flex flex-col h-fit gap-1 [&_span]:transition [&_span]:duration-300"
+        class="flex h-fit w-6 flex-col gap-1 [&_span]:transition [&_span]:duration-300"
       >
-        <span class="block h-[3px] w-full bg-foreground"></span>
-        <span class="block h-[3px] w-full bg-foreground"></span>
-        <span class="block h-[3px] w-full bg-foreground"></span>
+        <span class="bg-foreground block h-[3px] w-full"></span>
+        <span class="bg-foreground block h-[3px] w-full"></span>
+        <span class="bg-foreground block h-[3px] w-full"></span>
       </span>
     </button>
   </div>
 </header>
 
-<style>
+<style scoped>
   #nav-bars {
     &.open {
       span {
@@ -55,7 +56,6 @@ import HeaderLink from './HeaderLink.astro';
   }
 
   #nav-menu {
-    
     @media screen and (max-width: 767px) {
       background-color: var(--color-card);
       box-shadow: var(--shadow-2xl);
@@ -71,13 +71,13 @@ import HeaderLink from './HeaderLink.astro';
       position: absolute;
       top: 100%;
 
-      &[data-open='true'] {
+      &[data-open="true"] {
         opacity: 1;
         transform: scale(100%);
         visibility: visible;
       }
 
-      &>div {
+      & > div {
         display: grid;
         gap: 32px;
         place-items: center;
@@ -88,34 +88,35 @@ import HeaderLink from './HeaderLink.astro';
     }
 
     @media screen and (min-width: 768px) {
-      &>div {
+      & > div {
         display: flex;
         gap: 48px;
         align-items: center;
       }
+    }
   }
 </style>
 
 <script>
-  const navButton = document.getElementById('nav-button');
-  const navMenu = document.getElementById('nav-menu');
-  const navBars = document.getElementById('nav-bars');
+  const navButton = document.getElementById("nav-button");
+  const navMenu = document.getElementById("nav-menu");
+  const navBars = document.getElementById("nav-bars");
 
   function toggleMenu() {
     if (!navBars || !navMenu) return;
-    navBars?.classList.toggle('open');
-    navMenu.dataset.open = JSON.stringify(navBars?.classList.contains('open'));
+    navBars?.classList.toggle("open");
+    navMenu.dataset.open = JSON.stringify(navBars?.classList.contains("open"));
   }
 
   function closeMenu() {
     if (!navBars || !navMenu) return;
-    navBars?.classList.remove('open');
-    navMenu.dataset.open = 'false';
+    navBars?.classList.remove("open");
+    navMenu.dataset.open = "false";
   }
 
-  navButton?.addEventListener('click', toggleMenu);
+  navButton?.addEventListener("click", toggleMenu);
 
-  document.addEventListener('click', e => {
+  document.addEventListener("click", (e) => {
     if (
       e.target === navButton ||
       navButton?.contains(e.target as Node) ||
@@ -125,5 +126,5 @@ import HeaderLink from './HeaderLink.astro';
     closeMenu();
   });
 
-  document.addEventListener('scroll', closeMenu);
+  document.addEventListener("scroll", closeMenu);
 </script>

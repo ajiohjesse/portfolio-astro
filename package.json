@@ -1,6 +1,7 @@
 {
   "name": "portfolio-astro",
   "version": "0.0.1",
+  "license": "MIT",
   "dependencies": {
     "@astrojs/mdx": "^4.2.1",
     "@astrojs/react": "^4.2.2",
@@ -20,10 +21,15 @@
     "dev": "astro dev --host",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --write ."
   },
   "type": "module",
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.16"
+    "@tailwindcss/typography": "^0.5.16",
+    "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "prettier-plugin-tailwindcss": "^0.6.11"
   }
 }

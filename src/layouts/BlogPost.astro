@@ -1,13 +1,13 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
-import Image from 'astro/components/Image.astro';
-import profile from '@/assets/images/profile-avatar.png';
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import profile from "@/assets/images/profile-avatar.png";
+import { Image } from "astro:assets";
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, publishedAt, updatedAt, heroImage } = Astro.props;
 ---
@@ -18,45 +18,45 @@ const { title, description, publishedAt, updatedAt, heroImage } = Astro.props;
   </head>
   <body>
     <Header />
-    <main class="max-w-4xl mx-auto px-6 py-12">
+    <main class="mx-auto max-w-4xl px-6 py-12">
       <article class="prose prose-invert prose-lg prose-a:text-primary mx-auto">
         {
           heroImage && (
-            <div class="w-full overflow-hidden rounded-xl mb-8">
-              <img class="w-full h-72 object-cover" src={heroImage} alt="" />
+            <div class="mb-8 w-full overflow-hidden rounded-xl">
+              <img class="h-72 w-full object-cover" src={heroImage} alt="" />
             </div>
           )
         }
         <div class="text-center">
-          <h1 class="text-4xl font-bold mt-4">{title}</h1>
+          <h1 class="mt-4 text-4xl font-bold">{title}</h1>
 
           <div
-            class="mt-4 text-muted text-base font-medium flex items-center gap-4"
+            class="text-muted mt-4 flex items-center gap-4 text-base font-medium"
           >
             <Image
               src={profile}
               alt="Jesse Ajioh"
-              class="size-10 !m-0 border border-muted/20 rounded-full object-cover overflow-hidden object-top"
+              class="border-muted/20 !m-0 size-10 overflow-hidden rounded-full border object-cover object-top"
             />
             <span>By Jesse Ajioh</span>
           </div>
 
-          <div class="mt-4 flex flex-wrap gap-4 text-muted text-base">
-            <time class="flex items-center gap-2 !m-0">
+          <div class="text-muted mt-4 flex flex-wrap gap-4 text-base">
+            <time class="!m-0 flex items-center gap-2">
               <span class="font-semibold">Published at:</span>
               <FormattedDate date={publishedAt} />
             </time>
             {
               updatedAt && (
-                <time class="flex items-center gap-2 !m-0">
-                  <span class="font-semibold">Updated at:</span>{' '}
+                <time class="!m-0 flex items-center gap-2">
+                  <span class="font-semibold">Updated at:</span>{" "}
                   <FormattedDate date={updatedAt} />
                 </time>
               )
             }
           </div>
         </div>
-        <div class="mt-6 border-t border-muted/20 pt-6">
+        <div class="border-muted/20 mt-6 border-t pt-6">
           <slot />
         </div>
       </article>

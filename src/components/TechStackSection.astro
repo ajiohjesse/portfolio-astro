@@ -1,53 +1,53 @@
 ---
-import AstroIcon from '@/icons/AstroIcon.astro';
-import CssIcon from '@/icons/CssIcon.astro';
-import ExpressIcon from '@/icons/ExpressIcon.astro';
-import HonoIcon from '@/icons/HonoIcon.astro';
-import HtmlIcon from '@/icons/HtmlIcon.astro';
-import NextIcon from '@/icons/NextIcon.astro';
-import NodeIcon from '@/icons/NodeIcon.astro';
-import PostgresIcon from '@/icons/PostgresIcon.astro';
-import ReactIcon from '@/icons/ReactIcon.astro';
-import SqliteIcon from '@/icons/SqliteIcon.astro';
-import TailwindIcon from '@/icons/TailwindIcon.astro';
-import TypescriptIcon from '@/icons/TypescriptIcon.astro';
-import VercelLogo from '@/icons/VercelLogo.astro';
-import MongoIcon from '@/icons/MongoIcon.astro';
-import CloudflareIcon from '@/icons/CloudflareIcon.astro';
-import NetlifyIcon from '@/icons/NetlifyIcon.astro';
-import BunIcon from '@/icons/BunIcon.astro';
-import AwsIcon from '@/icons/AwsIcon.astro';
-import TursoIcon from '@/icons/TursoIcon.astro';
-import FirebaseIcon from '@/icons/FirebaseIcon.astro';
-import SectionHeader from './SectionHeader';
+import AstroIcon from "@/icons/AstroIcon.astro";
+import CssIcon from "@/icons/CssIcon.astro";
+import ExpressIcon from "@/icons/ExpressIcon.astro";
+import HonoIcon from "@/icons/HonoIcon.astro";
+import HtmlIcon from "@/icons/HtmlIcon.astro";
+import NextIcon from "@/icons/NextIcon.astro";
+import NodeIcon from "@/icons/NodeIcon.astro";
+import PostgresIcon from "@/icons/PostgresIcon.astro";
+import ReactIcon from "@/icons/ReactIcon.astro";
+import SqliteIcon from "@/icons/SqliteIcon.astro";
+import TailwindIcon from "@/icons/TailwindIcon.astro";
+import TypescriptIcon from "@/icons/TypescriptIcon.astro";
+import VercelLogo from "@/icons/VercelLogo.astro";
+import MongoIcon from "@/icons/MongoIcon.astro";
+import CloudflareIcon from "@/icons/CloudflareIcon.astro";
+import NetlifyIcon from "@/icons/NetlifyIcon.astro";
+import BunIcon from "@/icons/BunIcon.astro";
+import AwsIcon from "@/icons/AwsIcon.astro";
+import TursoIcon from "@/icons/TursoIcon.astro";
+import FirebaseIcon from "@/icons/FirebaseIcon.astro";
+import SectionHeader from "./SectionHeader";
 
 const techStacks = {
   frontend: [
-    { name: 'HTML5', logo: HtmlIcon },
-    { name: 'CSS3', logo: CssIcon },
-    { name: 'React', logo: ReactIcon },
-    { name: 'Next.js', logo: NextIcon },
-    { name: 'Astro', logo: AstroIcon },
-    { name: 'Tailwind', logo: TailwindIcon },
+    { name: "HTML5", logo: HtmlIcon },
+    { name: "CSS3", logo: CssIcon },
+    { name: "React", logo: ReactIcon },
+    { name: "Next.js", logo: NextIcon },
+    { name: "Astro", logo: AstroIcon },
+    { name: "Tailwind", logo: TailwindIcon },
   ],
   backend: [
-    { name: 'TypeScript', logo: TypescriptIcon },
-    { name: 'Node.js', logo: NodeIcon },
-    { name: 'Bun', logo: BunIcon },
-    { name: 'Express', logo: ExpressIcon },
-    { name: 'Hono', logo: HonoIcon },
+    { name: "TypeScript", logo: TypescriptIcon },
+    { name: "Node.js", logo: NodeIcon },
+    { name: "Bun", logo: BunIcon },
+    { name: "Express", logo: ExpressIcon },
+    { name: "Hono", logo: HonoIcon },
   ],
   database: [
-    { name: 'PostgreSQL', logo: PostgresIcon },
-    { name: 'MongoDB', logo: MongoIcon },
-    { name: 'Sqlite', logo: SqliteIcon },
-    { name: 'Firebase', logo: FirebaseIcon },
+    { name: "PostgreSQL", logo: PostgresIcon },
+    { name: "MongoDB", logo: MongoIcon },
+    { name: "Sqlite", logo: SqliteIcon },
+    { name: "Firebase", logo: FirebaseIcon },
   ],
   infrastructure: [
-    { name: 'Vercel', logo: VercelLogo },
-    { name: 'Netlify', logo: NetlifyIcon },
-    { name: 'Cloudflare', logo: CloudflareIcon },
-    { name: 'AWS', logo: AwsIcon },
+    { name: "Vercel", logo: VercelLogo },
+    { name: "Netlify", logo: NetlifyIcon },
+    { name: "Cloudflare", logo: CloudflareIcon },
+    { name: "AWS", logo: AwsIcon },
   ],
 };
 ---
@@ -55,16 +55,16 @@ const techStacks = {
 <section class="container">
   <SectionHeader number={2} heading="My Tech Stack" />
 
-  <div class="grid md:grid-cols-2 gap-8 pt-12">
+  <div class="grid gap-8 pt-12 md:grid-cols-2">
     {
       Object.entries(techStacks).map(([category, technologies]) => (
-        <div class="bg-gradient-to-b from-transparent backdrop-blur-2xl to-card/50 p-6 shadow-md rounded">
-          <h3 class="text-xl font-bold mb-6 capitalize">{category}</h3>
+        <div class="to-card/50 rounded bg-gradient-to-b from-transparent p-6 shadow-md backdrop-blur-2xl">
+          <h3 class="mb-6 text-xl font-bold capitalize">{category}</h3>
           <div class="flex flex-wrap gap-8">
-            {technologies.map(tech => (
-              <div class="flex-1 bg-card-light hover:scale-110 transition-transform will-change-transform hover:shadow-lg hover:shadow-primary/20 p-4 rounded shadow grid place-items-center">
+            {technologies.map((tech) => (
+              <div class="bg-card-light hover:shadow-primary/20 grid flex-1 place-items-center rounded p-4 shadow transition-transform will-change-transform hover:scale-110 hover:shadow-lg">
                 <span class="block size-10">{<tech.logo />}</span>
-                <p class="text-sm pt-2 text-center">{tech.name}</p>
+                <p class="pt-2 text-center text-sm">{tech.name}</p>
               </div>
             ))}
           </div>

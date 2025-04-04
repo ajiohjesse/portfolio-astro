@@ -1,6 +1,6 @@
-import type { SVGComponent } from '@/types';
+import type { SVGComponent } from "@/types";
 
-const StarBadge: SVGComponent = props => {
+const StarBadge: SVGComponent = (props) => {
   return (
     <svg
       width="35"

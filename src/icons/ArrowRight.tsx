@@ -1,6 +1,6 @@
-import type { SVGComponent } from '@/types';
+import type { SVGComponent } from "@/types";
 
-const ArrowRight: SVGComponent = props => {
+const ArrowRight: SVGComponent = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

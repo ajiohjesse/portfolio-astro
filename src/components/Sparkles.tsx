@@ -1,10 +1,10 @@
-import useRandomInterval from '@/hooks/useRandomInterval';
-import { SparkleStar } from '@/icons/SparkleStar';
-import { cn, randomInt } from '@/lib/utils';
-import { useState } from 'react';
+import useRandomInterval from "@/hooks/useRandomInterval";
+import { SparkleStar } from "@/icons/SparkleStar";
+import { cn, randomInt } from "@/lib/utils";
+import { useState } from "react";
 
 // Default color is a bright yellow
-const DEFAULT_COLOR = 'hsl(50deg, 100%, 100%)';
+const DEFAULT_COLOR = "hsl(50deg, 100%, 100%)";
 
 const generateSparkle = (color = DEFAULT_COLOR) => {
   return {
@@ -14,8 +14,8 @@ const generateSparkle = (color = DEFAULT_COLOR) => {
     size: randomInt(6, 12),
     style: {
       // Pick a random spot in the available space
-      top: randomInt(0, 100) + '%',
-      left: randomInt(0, 100) + '%',
+      top: randomInt(0, 100) + "%",
+      left: randomInt(0, 100) + "%",
       // Float sparkles above sibling content
       zIndex: 2,
     },
@@ -39,7 +39,7 @@ const Sparkles = ({
       // Create a new sparkle
       const sparkle = generateSparkle();
       // Clean up any "expired" sparkles
-      const nextSparkles = sparkles.filter(sparkle => {
+      const nextSparkles = sparkles.filter((sparkle) => {
         const delta = now - sparkle.createdAt;
         return delta < 4000;
       });
@@ -49,12 +49,12 @@ const Sparkles = ({
       setSparkles(nextSparkles);
     },
     200,
-    500
+    500,
   );
 
   return (
-    <span className={cn('relative inline-block leading-none', className)}>
-      {sparkles.map(sparkle => (
+    <span className={cn("relative inline-block leading-none", className)}>
+      {sparkles.map((sparkle) => (
         <SparkleStar
           key={sparkle.id}
           color={sparkle.color}

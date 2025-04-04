@@ -1,8 +1,8 @@
 ---
-import { Image } from 'astro:assets';
-import Sparkles from './Sparkles';
-import ExternalArrow from '@/icons/ExternalArrow';
-import Github from '@/icons/Github';
+import { Image } from "astro:assets";
+import Sparkles from "./Sparkles";
+import ExternalArrow from "@/icons/ExternalArrow";
+import Github from "@/icons/Github";
 
 interface Props {
   name: string;
@@ -16,7 +16,7 @@ interface Props {
 const { name, image, description, tags, githubUrl, previewUrl } = Astro.props;
 ---
 
-<div class="grid h-full rounded bg-card p-4">
+<div class="bg-card grid h-full rounded p-4">
   <Image
     src={image}
     alt={name}
@@ -28,19 +28,19 @@ const { name, image, description, tags, githubUrl, previewUrl } = Astro.props;
     <h3 class="line-clamp-[2]">{name}</h3>
   </Sparkles>
 
-  <p class="mb-6 mt-2 line-clamp-4">{description}</p>
+  <p class="mt-2 mb-6 line-clamp-4">{description}</p>
 
   <div class="flex flex-wrap gap-x-4 gap-y-2 border-b border-slate-700 pb-4">
-    {tags.map(tag => <span class="text-base text-primary">{tag}</span>)}
+    {tags.map((tag) => <span class="text-primary text-base">{tag}</span>)}
   </div>
 
   <div class="mt-4 flex justify-end gap-6">
     <a href={githubUrl} target="_blank" rel="noreferrer" title="View on GitHub">
-      <Github className="size-6 transition-colors hover:text-primary" />
+      <Github className="hover:text-primary size-6 transition-colors" />
       <span class="sr-only">View on GitHub</span>
     </a>
     <a href={previewUrl} target="_blank" rel="noreferrer" title="View Preview">
-      <ExternalArrow className="size-6 transition-colors hover:text-primary" />
+      <ExternalArrow className="hover:text-primary size-6 transition-colors" />
       <span class="sr-only">View Preview</span>
     </a>
   </div>

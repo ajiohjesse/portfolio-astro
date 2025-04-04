@@ -1,9 +1,9 @@
-import ProductDesign from '@/icons/ProductDesign';
-import ProjectMgt from '@/icons/ProjectMgt';
-import UiUx from '@/icons/UiUx';
-import WebDev from '@/icons/WebDev';
-import Sparkles from './Sparkles';
-import SectionHeader from './SectionHeader';
+import ProductDesign from "@/icons/ProductDesign";
+import ProjectMgt from "@/icons/ProjectMgt";
+import UiUx from "@/icons/UiUx";
+import WebDev from "@/icons/WebDev";
+import SectionHeader from "./SectionHeader";
+import Sparkles from "./Sparkles";
 
 const Services = () => {
   return (
@@ -12,14 +12,14 @@ const Services = () => {
 
       <div className="relative grid gap-8 pt-12 sm:grid-cols-2">
         {SERVICES.map((service, index) => (
-          <div data-id="border-card" key={index} className="shadow-2xl h-full">
+          <div data-id="border-card" key={index} className="h-full shadow-2xl">
             <div
               data-id="border-card-inner"
-              className="flex h-full flex-1 flex-col rounded bg-card/80 backdrop-blur-3xl p-4 shadow-2xl md:p-6"
+              className="bg-card/80 flex h-full flex-1 flex-col rounded p-4 shadow-2xl backdrop-blur-3xl md:p-6"
             >
               {service.icon}
               <Sparkles className="w-fit">
-                <h3 className="text-xl font-bold py-4">{service.name}</h3>
+                <h3 className="py-4 text-xl font-bold">{service.name}</h3>
               </Sparkles>
               <p className="text-muted">{service.description}</p>
             </div>
@@ -34,27 +34,27 @@ export default Services;
 
 const SERVICES = [
   {
-    icon: <ProductDesign className="size-12 text-primary" />,
-    name: 'Product Design',
+    icon: <ProductDesign className="text-primary size-12" />,
+    name: "Product Design",
     description:
-      'I create well-researched, user-centered product designs that prioritize functionality and aesthetics.',
+      "I create well-researched, user-centered product designs that prioritize functionality and aesthetics.",
   },
   {
-    icon: <UiUx className="size-12 text-primary" />,
-    name: 'UI/UX Design',
+    icon: <UiUx className="text-primary size-12" />,
+    name: "UI/UX Design",
     description:
-      'I specialize in crafting intuitive and visually appealing user interfaces that enhance user experience. ',
+      "I specialize in crafting intuitive and visually appealing user interfaces that enhance user experience. ",
   },
   {
-    icon: <WebDev className="size-12 text-primary" />,
-    name: 'Web Development',
+    icon: <WebDev className="text-primary size-12" />,
+    name: "Web Development",
     description:
-      'I build responsive, fast, and reliable web applications tailored to meet client objectives.',
+      "I build responsive, fast, and reliable web applications tailored to meet client objectives.",
   },
   {
-    icon: <ProjectMgt className="size-12 text-primary" />,
-    name: 'Project Management',
+    icon: <ProjectMgt className="text-primary size-12" />,
+    name: "Project Management",
     description:
-      'With a strategic approach to project management, I guide projects from inception to completion.',
+      "With a strategic approach to project management, I guide projects from inception to completion.",
   },
 ];
