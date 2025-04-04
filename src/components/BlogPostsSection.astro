@@ -15,7 +15,7 @@ const posts = (await getCollection("blog"))
     {
       posts.length > 0 ? (
         posts.map((post) => (
-          <a href={`/blog${post.id}`} class="block">
+          <a href={`/blog/${post.id}`} class="block">
             <div class="bg-card group mb-6 rounded p-6 shadow-md transition hover:shadow-xl">
               <h3 class="group-hover:text-primary text-xl font-bold transition">
                 {post.data.title}

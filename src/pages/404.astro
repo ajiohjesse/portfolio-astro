@@ -1,0 +1,22 @@
+---
+import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
+import PageLayout from "@/layouts/PageLayout.astro";
+---
+
+<PageLayout>
+  <Header />
+  <div class="grid gap-y-24 py-12 pt-4 sm:pt-12">
+    <section>
+      <h1>Page Not Found :(</h1>
+      <p>The page you requested could not be found.</p>
+      <a
+        href="/"
+        class="bg-primary shadow-primary/30 mx-auto mt-8 block w-max rounded p-0 px-12 py-6 leading-0 transition-all hover:shadow-2xl active:scale-95"
+      >
+        Back to homepage
+      </a>
+    </section>
+    <Footer />
+  </div>
+</PageLayout>

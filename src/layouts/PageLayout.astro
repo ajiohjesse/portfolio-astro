@@ -1,0 +1,18 @@
+---
+import BaseHead from "@/components/BaseHead.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import BgGlow from "@/components/BgGlow.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <BgGlow />
+    <main class="relative z-10">
+      <slot />
+    </main>
+  </body>
+</html>

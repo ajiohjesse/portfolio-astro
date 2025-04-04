@@ -1,59 +1,44 @@
 ---
-import BaseHead from "../../components/BaseHead.astro";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
-import BgGlow from "@/components/BgGlow.astro";
+import PageLayout from "@/layouts/PageLayout.astro";
 
 const posts = (await getCollection("blog"))
-  .filter((post) => post.data.isPublished)
+  .filter(post => post.data.isPublished)
   .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />
-    <BgGlow />
-    <main class="relative z-10">
-      <section class="container">
-        {
-          posts.length > 0 ? (
-            posts.map((post) => {
-              const { data } = post;
-              return (
-                <a href={`/blog/${post.id}`} class="block">
-                  <div class="bg-card group mb-6 rounded p-6 shadow-md transition hover:shadow-xl">
-                    <h3 class="group-hover:text-primary text-xl font-bold transition">
-                      {data.title}
-                    </h3>
-                    <p class="text-muted mt-2 mb-4 block text-sm">
-                      <FormattedDate date={data.publishedAt} />
-                    </p>
-                    <p class="text-muted">{data.description}</p>
-                  </div>
-                </a>
-              );
-            })
-          ) : (
-            <div class="text-muted grid place-items-center gap-6 py-48 text-center">
-              <p class="text-xl">No post published yet.</p>
-              <a
-                href="/"
-                class="bg-primary rounded px-12 py-4 transition-transform active:scale-95"
-              >
-                Back to homepage
-              </a>
-            </div>
-          )
-        }
-      </section>
-    </main>
-    <Footer />
-  </body>
-</html>
+<PageLayout>
+  <section class="container">
+    {
+      posts.length > 0 ? (
+        posts.map(post => {
+          const { data } = post;
+          return (
+            <a href={`/blog/${post.id}`} class="block">
+              <div class="bg-card group mb-6 rounded p-6 shadow-md transition hover:shadow-xl">
+                <h3 class="group-hover:text-primary text-xl font-bold transition">
+                  {data.title}
+                </h3>
+                <p class="text-muted mt-2 mb-4 block text-sm">
+                  <FormattedDate date={data.publishedAt} />
+                </p>
+                <p class="text-muted">{data.description}</p>
+              </div>
+            </a>
+          );
+        })
+      ) : (
+        <div class="text-muted grid place-items-center gap-6 py-48 text-center">
+          <p class="text-xl">No post published yet.</p>
+          <a
+            href="/"
+            class="bg-primary rounded px-12 py-4 transition-transform active:scale-95"
+          >
+            Back to homepage
+          </a>
+        </div>
+      )
+    }
+  </section>
+</PageLayout>

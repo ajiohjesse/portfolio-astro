@@ -2,41 +2,29 @@
 import BlogPostsSection from "@/components/BlogPostsSection.astro";
 import TechStackSection from "@/components/TechStackSection.astro";
 import WorkHistorySection from "@/components/WorkHistorySection.astro";
-import BaseHead from "../components/BaseHead.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-
 import LandingHero from "@/components/LandingHero.astro";
 import Services from "@/components/Services";
 import Projects from "@/components/Projects.astro";
 import Footer from "@/components/Footer.astro";
 import SectionDivider from "@/components/SectionDivider.astro";
 import Header from "@/components/Header.astro";
-import BgGlow from "@/components/BgGlow.astro";
+import PageLayout from "@/layouts/PageLayout.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <BgGlow />
-    <main class="relative z-10">
-      <Header />
-      <div class="grid gap-y-24 py-12 pt-4 sm:pt-12">
-        <LandingHero />
-        <SectionDivider />
-        <Services client:load />
-        <SectionDivider />
-        <TechStackSection />
-        <SectionDivider />
-        <WorkHistorySection />
-        <SectionDivider />
-        <Projects />
-        <SectionDivider />
-        <BlogPostsSection />
-        <Footer />
-      </div>
-    </main>
-  </body>
-</html>
+<PageLayout>
+  <Header />
+  <div class="grid gap-y-24 py-12 pt-4 sm:pt-12">
+    <LandingHero />
+    <SectionDivider />
+    <Services client:load />
+    <SectionDivider />
+    <TechStackSection />
+    <SectionDivider />
+    <WorkHistorySection />
+    <SectionDivider />
+    <Projects />
+    <SectionDivider />
+    <BlogPostsSection />
+    <Footer />
+  </div>
+</PageLayout>
