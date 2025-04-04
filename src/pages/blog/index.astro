@@ -8,8 +8,6 @@ export const prerender = false;
 const url = new URL(Astro.request.url);
 const searchQuery = url.searchParams.get("search")?.toLowerCase() ?? "";
 
-console.log({ url });
-
 const allPosts = await getCollection("blog", post => post.data.isPublished);
 
 const posts = allPosts
