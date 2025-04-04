@@ -2,6 +2,9 @@
 import BaseHead from "@/components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import BgGlow from "@/components/BgGlow.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import SectionDivider from "@/components/SectionDivider.astro";
 ---
 
 <!doctype html>
@@ -12,7 +15,12 @@ import BgGlow from "@/components/BgGlow.astro";
   <body>
     <BgGlow />
     <main class="relative z-10">
+      <Header />
       <slot />
+      <div class="py-24">
+        <SectionDivider class:list={["py-24"]} />
+      </div>
+      <Footer />
     </main>
   </body>
 </html>
