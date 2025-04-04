@@ -17,7 +17,7 @@ const { Content } = await render(post);
 ---
 
 <BlogPost {...post.data}>
-  <blockquote>
+  <blockquote class="text-base text-muted">
     TL:DR; {post.data.description}
   </blockquote>
   <Content />

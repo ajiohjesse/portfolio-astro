@@ -3,13 +3,65 @@ import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 import PageLayout from "@/layouts/PageLayout.astro";
 
-const posts = (await getCollection("blog", post => post.data.isPublished)).sort(
-  (a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf(),
-);
+export const prerender = false;
+
+const url = new URL(Astro.request.url);
+const searchQuery = url.searchParams.get("search")?.toLowerCase() ?? "";
+
+console.log({ url });
+
+const allPosts = await getCollection("blog", post => post.data.isPublished);
+
+const posts = allPosts
+  .filter(
+    post =>
+      post.data.title.toLowerCase().includes(searchQuery) ||
+      post.data.description.toLowerCase().includes(searchQuery),
+  )
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
 ---
 
 <PageLayout>
-  <section class="container">
+  <section class="container py-24">
+    <form
+      method="GET"
+      class="mb-8 flex flex-col gap-4 md:flex-row md:items-center"
+    >
+      <div class="relative w-full">
+        <input
+          type="text"
+          name="search"
+          placeholder="Search blog posts..."
+          value={searchQuery}
+          class="w-full rounded h-15 border border-muted/20 p-4 pr-12 shadow outline-primary"
+        />
+        {
+          Boolean(searchQuery) && (
+            <button
+              id="search-reset"
+              type="reset"
+              class="absolute top-1/2 right-4 -translate-y-1/2 size-8 grid place-items-center rounded-full bg-card text-base text-muted hover:scale-110 transition-transform will-change-transform"
+            >
+              X
+            </button>
+          )
+        }
+      </div>
+      <button
+        type="submit"
+        class="bg-primary rounded px-12 py-4 transition-transform active:scale-95"
+        >Search</button
+      >
+    </form>
+
+    {
+      searchQuery && (
+        <p class="text-muted mb-4 text-sm">
+          Showing results for "<strong>{searchQuery}</strong>"
+        </p>
+      )
+    }
+
     {
       posts.length > 0 ? (
         posts.map(post => {
@@ -29,8 +81,8 @@ const posts = (await getCollection("blog", post => post.data.isPublished)).sort(
           );
         })
       ) : (
-        <div class="text-muted grid place-items-center gap-6 py-48 text-center">
-          <p class="text-xl">No post published yet.</p>
+        <div class="text-muted grid place-items-center gap-6 py-24 text-center">
+          <p class="text-xl">No posts found.</p>
           <a
             href="/"
             class="bg-primary rounded px-12 py-4 transition-transform active:scale-95"
@@ -42,3 +94,15 @@ const posts = (await getCollection("blog", post => post.data.isPublished)).sort(
     }
   </section>
 </PageLayout>
+
+<script>
+  const resetButton = document.getElementById("search-reset");
+
+  if (resetButton) {
+    resetButton.addEventListener("click", () => {
+      const url = new URL(window.location.href);
+      url.searchParams.delete("search");
+      window.location.replace(url);
+    });
+  }
+</script>

@@ -5,22 +5,18 @@ import PageLayout from "@/layouts/PageLayout.astro";
 ---
 
 <PageLayout>
-  <Header />
-  <div class="grid gap-y-24 py-12 pt-4 sm:pt-12">
-    <section
-      class="container flex min-h-[calc(100vh-10rem)] flex-col items-center justify-center text-center"
+  <section
+    class="container flex min-h-[calc(100vh-10rem)] flex-col items-center justify-center text-center"
+  >
+    <h1 class="text-4xl font-bold mb-4 md:text-6xl">
+      Page Not Found <span class="inline-blog whitespace-nowrap">:(</span>
+    </h1>
+    <p>The page you requested could not be found.</p>
+    <a
+      href="/"
+      class="bg-primary shadow-primary/30 mx-auto mt-8 block w-max rounded p-0 px-12 py-6 leading-0 transition-all hover:shadow-2xl active:scale-95"
     >
-      <h1 class="text-4xl font-bold mb-4 md:text-6xl">
-        Page Not Found <span class="inline-blog whitespace-nowrap">:(</span>
-      </h1>
-      <p>The page you requested could not be found.</p>
-      <a
-        href="/"
-        class="bg-primary shadow-primary/30 mx-auto mt-8 block w-max rounded p-0 px-12 py-6 leading-0 transition-all hover:shadow-2xl active:scale-95"
-      >
-        Back to homepage
-      </a>
-    </section>
-    <Footer />
-  </div>
+      Back to homepage
+    </a>
+  </section>
 </PageLayout>
