@@ -5,7 +5,7 @@ import FormattedDate from "./FormattedDate.astro";
 
 const posts = (await getCollection("blog", post => post.data.isPublished))
   .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
-  .slice(5);
+  .slice(0, 5);
 ---
 
 <section class="container">
