@@ -11,7 +11,7 @@ const generateSparkle = (color = DEFAULT_COLOR) => {
     id: String(randomInt(10000, 99999)) + Date.now(),
     createdAt: Date.now(),
     color,
-    size: randomInt(6, 12),
+    size: randomInt(8, 16),
     style: {
       // Pick a random spot in the available space
       top: randomInt(0, 100) + "%",

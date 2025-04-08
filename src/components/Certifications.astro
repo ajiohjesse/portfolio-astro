@@ -1,0 +1,45 @@
+---
+const certifications = [
+  {
+    title: "Project Management Professional (PMP)",
+    issuer: "Dexter and Heros Consulting LTD",
+    url: "https://dexterheros.com",
+  },
+  {
+    title: "Human Resource Management (HRM)",
+    issuer: "Dexter and Heros Consulting LTD",
+    url: "https://dexterheros.com",
+  },
+  {
+    title: "IOMP Graduate Member",
+    issuer: "International Organization of Management Professionals",
+    url: "https://inomp.org",
+  },
+];
+import SectionHeader from "./SectionHeader";
+import Sparkles from "./Sparkles";
+---
+
+<section class="container">
+  <SectionHeader number={5} heading="Certifications" />
+
+  <div class="pt-12 pb-8 space-y-6">
+    {
+      certifications.map(cert => (
+        <div class="bg-card rounded p-6 shadow-md transition hover:shadow-xl">
+          <h3 class="text-xl font-semibold text-foreground">
+            <Sparkles text={cert.title} client:load />
+          </h3>
+          <a
+            href={cert.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-muted mt-2 block text-base underline"
+          >
+            {cert.issuer}
+          </a>
+        </div>
+      ))
+    }
+  </div>
+</section>

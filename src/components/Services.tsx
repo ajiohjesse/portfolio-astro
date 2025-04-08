@@ -37,24 +37,24 @@ const SERVICES = [
     icon: <ProductDesign className="text-primary size-12" />,
     name: "Product Design",
     description:
-      "I create well-researched, user-centered product designs that prioritize functionality and aesthetics.",
+      "I enjoy designing products that are not just functional, but also thoughtful and easy to use. It's all about solving real problems for real people.",
   },
   {
     icon: <UiUx className="text-primary size-12" />,
     name: "UI/UX Design",
     description:
-      "I specialize in crafting intuitive and visually appealing user interfaces that enhance user experience. ",
+      "Clean layouts, smooth flows, and a focus on the user — I take pride in creating interfaces that just make sense.",
   },
   {
     icon: <WebDev className="text-primary size-12" />,
     name: "Web Development",
     description:
-      "I build responsive, fast, and reliable web applications tailored to meet client objectives.",
+      "I build fast, responsive websites and web apps that look great and work even better. From frontend to backend, I've got it covered.",
   },
   {
     icon: <ProjectMgt className="text-primary size-12" />,
     name: "Project Management",
     description:
-      "With a strategic approach to project management, I guide projects from inception to completion.",
+      "I keep things organized, communicate clearly, and make sure projects stay on track — from idea to launch.",
   },
 ];

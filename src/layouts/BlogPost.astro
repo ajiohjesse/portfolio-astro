@@ -12,9 +12,7 @@ type Props = CollectionEntry<"blog">["data"];
 const { title, description, publishedAt, updatedAt, heroImage } = Astro.props;
 const baseUrl = Astro.url.origin;
 
-const ogUrl = heroImage
-  ? `${baseUrl}/${heroImage}`
-  : `${baseUrl}/dynamic-og.png?title=${encodeURIComponent(title)}`;
+const ogUrl = `${baseUrl}/blog/${title}/og.png?url`;
 
 const structuredData = {
   "@context": "https://schema.org",

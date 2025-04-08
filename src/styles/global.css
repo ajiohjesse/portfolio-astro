@@ -12,7 +12,8 @@
 :root {
   --background: #0a192f;
   --foreground: #e6f1ff;
-  --secondary: #64ffda;
+  /* --secondary: #64ffda; */
+  --secondary: #4cc3a8;
   --primary: #ffdb64;
   --primary-foreground: #0a192f;
   --card: #112240;
