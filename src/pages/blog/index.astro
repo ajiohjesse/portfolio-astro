@@ -38,9 +38,12 @@ const posts = allPosts
             <button
               id="search-reset"
               type="reset"
-              class="absolute top-1/2 right-4 -translate-y-1/2 size-8 grid place-items-center rounded-full bg-card text-base text-muted hover:scale-110 transition-transform will-change-transform"
+              class="absolute top-1/2 right-4 -translate-y-1/2 size-8 grid place-items-center rounded-full bg-primary text-primary-foreground text-sm font-medium  hover:scale-110 transition-transform will-change-transform"
             >
-              X
+              <>
+                <span>X</span>
+                <span class="sr-only">Clear search</span>
+              </>
             </button>
           )
         }

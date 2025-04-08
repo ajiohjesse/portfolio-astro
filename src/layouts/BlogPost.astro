@@ -12,6 +12,10 @@ type Props = CollectionEntry<"blog">["data"];
 const { title, description, publishedAt, updatedAt, heroImage } = Astro.props;
 const baseUrl = Astro.url.origin;
 
+const ogUrl = heroImage
+  ? `${baseUrl}/${heroImage}`
+  : `${baseUrl}/dynamic-og.png?title=${encodeURIComponent(title)}`;
+
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -19,9 +23,7 @@ const structuredData = {
   datePublished: publishedAt.toISOString(),
   dateModified: updatedAt ? updatedAt.toISOString() : publishedAt.toISOString(),
   description,
-  image: heroImage
-    ? `${baseUrl}/${heroImage}`
-    : `${baseUrl}/og?title=${encodeURIComponent(title)}`,
+  image: ogUrl,
   url: `${Astro.url.origin}/blog/${Astro.url.pathname.replace(/^\/+/, "")}`,
   author: {
     "@type": "Person",
@@ -32,7 +34,7 @@ const structuredData = {
 
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead title={title} description={description} image={ogUrl} />
     <script
       is:inline
       type="application/ld+json"

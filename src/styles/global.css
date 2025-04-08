@@ -58,9 +58,9 @@
     text-align: left;
     background-color: var(--color-background);
     background-image:
-      linear-gradient(#0a192fc6, #0a192ffd, #0a192f), url("/bg.svg");
+      linear-gradient(#0a192fc5, #0a192ffb, #0a192f), url("/bg.webp");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-attachment: fixed;
     word-wrap: break-word;
     overflow-wrap: break-word;
