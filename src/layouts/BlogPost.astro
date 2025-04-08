@@ -42,7 +42,9 @@ const structuredData = {
   <body>
     <Header />
     <main class="mx-auto max-w-4xl px-6 py-12">
-      <article class="prose prose-invert prose-lg prose-a:text-primary mx-auto">
+      <article
+        class="prose prose-invert prose-lg prose-a:text-primary mx-auto [&_blockquote]:bg-card/30 [&_blockquote]:p-4 [&_blockquote]:backdrop-blur-sm [&_blockquote]:text-secondary"
+      >
         {
           heroImage && (
             <div class="mb-8 w-full overflow-hidden rounded-xl">

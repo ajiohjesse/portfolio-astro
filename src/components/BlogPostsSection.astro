@@ -3,9 +3,9 @@ import { getCollection } from "astro:content";
 import SectionHeader from "./SectionHeader";
 import FormattedDate from "./FormattedDate.astro";
 
-const posts = (await getCollection("blog", post => post.data.isPublished)).sort(
-  (a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf(),
-);
+const posts = (await getCollection("blog", post => post.data.isPublished))
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
+  .slice(5);
 ---
 
 <section class="container">
