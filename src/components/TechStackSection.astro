@@ -58,11 +58,11 @@ const techStacks = {
   <div class="grid gap-8 pt-12 md:grid-cols-2">
     {
       Object.entries(techStacks).map(([category, technologies]) => (
-        <div class="to-card/50 rounded bg-gradient-to-b from-transparent p-6 shadow-md backdrop-blur-2xl">
+        <div class="to-card/20 rounded border border-muted/5 bg-gradient-to-b from-transparent p-6 shadow-md backdrop-blur-sm">
           <h3 class="mb-6 text-xl font-bold capitalize">{category}</h3>
           <div class="flex flex-wrap gap-8">
             {technologies.map(tech => (
-              <div class="bg-card-light hover:shadow-primary/20 grid flex-1 place-items-center rounded p-4 shadow transition-transform will-change-transform hover:scale-110 hover:shadow-lg">
+              <div class="bg-card-light/20 backdrop-blur-sm  grid flex-1 place-items-center rounded p-4 shadow transition-transform will-change-transform hover:scale-110 hover:shadow-lg">
                 <span class="block size-10">{<tech.logo />}</span>
                 <p class="pt-2 text-center text-sm">{tech.name}</p>
               </div>

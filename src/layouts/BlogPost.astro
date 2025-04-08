@@ -10,11 +10,34 @@ import { Image } from "astro:assets";
 type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, publishedAt, updatedAt, heroImage } = Astro.props;
+const baseUrl = Astro.url.origin;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  datePublished: publishedAt.toISOString(),
+  dateModified: updatedAt ? updatedAt.toISOString() : publishedAt.toISOString(),
+  description,
+  image: heroImage
+    ? `${baseUrl}/${heroImage}`
+    : `${baseUrl}/og?title=${encodeURIComponent(title)}`,
+  url: `${Astro.url.origin}/blog/${Astro.url.pathname.replace(/^\/+/, "")}`,
+  author: {
+    "@type": "Person",
+    name: "Jesse Ajioh",
+  },
+};
 ---
 
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(structuredData)}
+    />
   </head>
   <body>
     <Header />

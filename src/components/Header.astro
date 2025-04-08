@@ -22,16 +22,16 @@ import HeaderLink from "./HeaderLink.astro";
     <button
       id="nav-button"
       type="button"
-      class="bg-primary grid size-12 place-items-center md:hidden"
+      class="bg-primary text-primary-foreground grid size-12 place-items-center md:hidden"
     >
       <span class="sr-only">Toogle nav menu</span>
       <span
         id="nav-bars"
         class="flex h-fit w-6 flex-col gap-1 [&_span]:transition [&_span]:duration-300"
       >
-        <span class="bg-foreground block h-[3px] w-full"></span>
-        <span class="bg-foreground block h-[3px] w-full"></span>
-        <span class="bg-foreground block h-[3px] w-full"></span>
+        <span class="bg-primary-foreground block h-[3px] w-full"></span>
+        <span class="bg-primary-foreground block h-[3px] w-full"></span>
+        <span class="bg-primary-foreground block h-[3px] w-full"></span>
       </span>
     </button>
   </div>
@@ -116,7 +116,7 @@ import HeaderLink from "./HeaderLink.astro";
 
   navButton?.addEventListener("click", toggleMenu);
 
-  document.addEventListener("click", (e) => {
+  document.addEventListener("click", e => {
     if (
       e.target === navButton ||
       navButton?.contains(e.target as Node) ||

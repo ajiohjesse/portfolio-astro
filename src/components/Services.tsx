@@ -15,12 +15,12 @@ const Services = () => {
           <div data-id="border-card" key={index} className="h-full shadow-2xl">
             <div
               data-id="border-card-inner"
-              className="bg-card/50 flex h-full flex-1 flex-col rounded p-4 shadow-2xl backdrop-blur-3xl md:p-6"
+              className="bg-card/90 flex h-full flex-1 flex-col rounded p-4 shadow-2xl backdrop-blur-3xl md:p-6"
             >
               {service.icon}
-                <h3 className="py-4 text-xl w-fit font-bold">
+              <h3 className="py-4 text-xl w-fit font-bold">
                 <Sparkles text={service.name} />
-                  </h3>
+              </h3>
               <p className="text-muted">{service.description}</p>
             </div>
           </div>
