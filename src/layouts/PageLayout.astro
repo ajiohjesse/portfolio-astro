@@ -5,12 +5,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import SectionDivider from "@/components/SectionDivider.astro";
+
+interface Props {
+  subTitle?: string;
+}
+
+const { subTitle } = Astro.props;
+const title = subTitle ? `${SITE_TITLE} - ${subTitle}` : SITE_TITLE;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead title={title} description={SITE_DESCRIPTION} />
   </head>
   <body>
     <!-- <BgGlow /> -->

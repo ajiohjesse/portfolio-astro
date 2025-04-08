@@ -80,18 +80,18 @@ export const GET: APIRoute<CollectionEntry<"blog">> = async ({
                   children: `${title}`,
                 },
               },
-              {
-                type: "p",
-                props: {
-                  style: {
-                    fontSize: "20px",
-                    marginBottom: "16px",
-                    color: "#8892b0",
-                    maxWidth: "90%",
-                  },
-                  children: `${description}`,
-                },
-              },
+              // {
+              //   type: "p",
+              //   props: {
+              //     style: {
+              //       fontSize: "20px",
+              //       marginBottom: "16px",
+              //       color: "#8892b0",
+              //       maxWidth: "90%",
+              //     },
+              //     children: `${description}`,
+              //   },
+              // },
               {
                 type: "h2",
                 props: {
