@@ -7,13 +7,13 @@ import FormattedDate from "../components/FormattedDate.astro";
 import profile from "@/assets/images/profile-avatar.png";
 import { Image } from "astro:assets";
 
-type Props = CollectionEntry<"blog">["data"] & { id: string };
+type Props = CollectionEntry<"blog">["data"] & { id?: string };
 
 const { title, description, publishedAt, updatedAt, heroImage, id } =
   Astro.props;
 const baseUrl = Astro.url.origin;
 
-const ogUrl = `${baseUrl}/blog/${id}/og.png?url`;
+const ogUrl = id ? `${baseUrl}/blog/${id}/og.png?url` : `${baseUrl}/og.png?url`;
 
 const structuredData = {
   "@context": "https://schema.org",
